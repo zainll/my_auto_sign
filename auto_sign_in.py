@@ -44,7 +44,8 @@ class CheckIn(object):
         }
         
         response = self.client.post(self.sign_url, headers=headers)
-        print("resp: %s" % response)
+        #print("resp: %s" % response)
+        logging.info(self.masked_username + "\t" + response.json()["msg"])
         try:
             logging.info(self.masked_username + "\t" + response.json()["msg"])
         except json.decoder.JSONDecodeError as e:
