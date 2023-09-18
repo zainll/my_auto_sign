@@ -47,8 +47,12 @@ class CheckIn(object):
         #print("resp: %s" % response)
         #logging.info(self.masked_username + "\t" + response.json()["msg"])
         try:
+            #logging.info(self.masked_username + "\t" + response.json()["msg"])
+            res = response.json()
+            print("response.json() :", str(res))
             logging.info(self.masked_username + "\t" + response.json()["msg"])
         except json.decoder.JSONDecodeError as e:
+            logging.info(self.masked_username + "\t")
             print("JSONDecodeError:", str(e))
 
 
