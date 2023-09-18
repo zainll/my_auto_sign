@@ -42,9 +42,13 @@ class CheckIn(object):
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
             "Referer": "https://w1.v2free.net/user",
         }
+        
         response = self.client.post(self.sign_url, headers=headers)
-
-        logging.info(self.masked_username + "\t" + response.json()["msg"])
+        
+        try:
+            logging.info(self.masked_username + "\t" + response.json()["msg"])
+        except json.decoder.JSONDecodeError as e:
+            print("JSONDecodeError:", str(e))
 
 
 if __name__ == "__main__":
