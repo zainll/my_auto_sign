@@ -37,7 +37,7 @@ class CheckIn(object):
             "code": "",
         }
         self.client.post(self.login_url, data=data, headers=headers)
-
+        # https://w1.v2free.net/auth/login
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
             "Referer": "https://w1.v2free.net/user",

@@ -90,6 +90,6 @@ jobs:
         git add .
         git commit -m "Update flow.log" -a
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@main
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
